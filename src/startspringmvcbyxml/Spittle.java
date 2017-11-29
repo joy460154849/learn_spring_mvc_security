@@ -24,7 +24,7 @@ public class Spittle {
 	@NotNull
 	@Size(min=5,max=16)
 	private String passsword;
-	
+		
 	public Double getLatitude() {
 		return latitude;
 	}

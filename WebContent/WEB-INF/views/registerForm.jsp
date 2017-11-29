@@ -14,8 +14,8 @@ span.error:{color:red;}
 <body>
 
 <sf:form  commandName="spittle" method="post" enctype="mulipart/form-data">
-profile Picture
-	<sf:input path="profilePicture" name="profilePicture" type="file" accept="image/jpeg,image/png,image/gif"/>
+<label>profile Picture</label>
+	<input name="profilePicture" type="file" accept="image/jpeg,image/png,image/gif"/>
 First name:
 	<sf:input  path="firstName" value="J"/><br/>
 	<sf:errors  path="firstName" /><br/>

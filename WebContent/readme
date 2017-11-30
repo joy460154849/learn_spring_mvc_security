@@ -1,0 +1,20 @@
+xml 方式配置springMVC
+这里在web.xml中多添加了一个文件上传的部分，在WebConfig中多了一个bean的配置，如下，若不需要配置去掉即可。
+	web.xml:
+			<multipart-config>
+				<location>/temp/spittle/uploads</location>
+				<max-file-size>2097152</max-file-size>
+				<max-request-size>4194304</max-request-size>
+			</multipart-config>
+			
+	WebConfig:
+			
+		/**
+		 *为文件上传配置的 
+		 */
+		@Bean
+		public MultipartResolver mulitipartResovler() throws IOException{
+			return new StandardServletMultipartResolver();
+		}
+配置的异常处理,异常处理的类分别是 Exceprions,Exceprions2 AppWideExceptionHandler, WriteException
+		

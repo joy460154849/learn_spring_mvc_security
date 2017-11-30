@@ -11,9 +11,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping({"/","/homepage"})
 public class HomeController {
 
-	@RequestMapping(method=RequestMethod.GET)
+	@RequestMapping(value="home",method=RequestMethod.GET)
 	public String home(){
 		return "home";
+	}
+	
+	@RequestMapping(value="/img",method=RequestMethod.GET)
+	public String getimg(){
+		return "uploadimg";
 	}
 //	
 //	@RequestMapping(method=RequestMethod.GET)

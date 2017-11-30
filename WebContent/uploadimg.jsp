@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form method="post" action="/uploads/registerImg" enctype="mulipart/form-data">
+<form method="post" action="/uploads/registerImg/" enctype="mulipart/form-data">
 	profile Picture
 	<br/>
 	<input name="profilePicture" type="file" accept="image/jpeg,image/png,image/gif"/><br/>

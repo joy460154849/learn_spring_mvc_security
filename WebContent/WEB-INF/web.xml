@@ -1,71 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>startspringmvc</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
-  
-  <!-- 设置根上下文配置文件位置 -->
- <context-param>
- 	
- 	<!-- 使用XML配置 -->
- <!-- 	<param-value>/WEB-INF/spring/root-context.xml</param-value> -->
-<!--  	<param-name>contextConfigLocation</param-name> -->
-	<!-- 使用XML配置 -->
-	<param-name>contextClass</param-name>
- 	<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
- </context-param>
- 
- <context-param>
- 	<param-name>contextConfigLocation</param-name>
- 	<param-value>startspringmvcbyxml.RootConfig</param-value>
- </context-param>
- 
- <!-- 注册ContextLoader-Listener -->
- <listener>
- 	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
- </listener>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>startspringmvc</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
 
-<!-- 注册Dispatcher-Servlet 同时配置了文件上传 --> 
- <servlet>
-	 <servlet-name>appServlet</servlet-name>
-	 <servlet-class> org.springframework.web.servlet.DispatcherServlet</servlet-class>
-	 <init-param>
-	 	<param-name>contextClass</param-name>
-	 	<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
-	 </init-param>
-	 <init-param>
-	 	<param-name>contextConfigLocation</param-name>
-	 	<param-value>startspringmvcbyxml.WebConfig</param-value>
-	 </init-param>
-	 <load-on-startup>1</load-on-startup>
-	 <multipart-config>
- 		<location>/temp/spittle/uploads</location>
- 		<max-file-size>2097152</max-file-size>
- 		<max-request-size>4194304</max-request-size>
- 	</multipart-config>
- </servlet>
- 
- <!-- 将Dispatcher映射到“/” -->
- <servlet-mapping>
- 	<servlet-name>appServlet</servlet-name>
- 	<url-pattern>/</url-pattern>
- </servlet-mapping>
-  
- <!--配置文件上传 -->
- <!-- <servlet>
- 	<servlet-name>appServlet1</servlet-name>
- 	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
- 	<load-on-startup>1</load-on-startup>
- 	<multipart-config>
- 		<location>/temp/spittle/uploads</location>
- 		<max-file-size>2097152</max-file-size>
- 		<max-request-size>4194304</max-request-size>
- 	</multipart-config>
- </servlet>  -->
+
+
+
+	<!-- 设置根上下文配置文件位置 -->
+	<context-param>
+
+		<!-- 使用XML配置 -->
+		<!-- <param-value>/WEB-INF/spring/root-context.xml</param-value> -->
+		<!-- <param-name>contextConfigLocation</param-name> -->
+		<!-- 使用XML配置 -->
+		<param-name>contextClass</param-name>
+		<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+	</context-param>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>startspringmvcbyxml.RootConfig</param-value>
+	</context-param>
+
+	<!-- 注册ContextLoader-Listener -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- 注册Dispatcher-Servlet 同时配置了文件上传 -->
+	<servlet>
+		<servlet-name>appServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextClass</param-name>
+			<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+		</init-param>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>startspringmvcbyxml.WebConfig</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+		<multipart-config>
+			<location>/temp/spittle/uploads</location>
+			<max-file-size>2097152</max-file-size>
+			<max-request-size>4194304</max-request-size>
+		</multipart-config>
+	</servlet>
+
+	<!-- 将Dispatcher映射到“/” -->
+	<servlet-mapping>
+		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<!--配置文件上传 -->
+	<!-- <servlet> <servlet-name>appServlet1</servlet-name> <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> 
+		<load-on-startup>1</load-on-startup> <multipart-config> <location>/temp/spittle/uploads</location> 
+		<max-file-size>2097152</max-file-size> <max-request-size>4194304</max-request-size> 
+		</multipart-config> </servlet> -->
 </web-app>

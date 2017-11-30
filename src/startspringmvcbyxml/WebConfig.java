@@ -14,9 +14,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import exceptions.AppWideExceptionHandler;
+
 @Configuration
 @EnableWebMvc
-@ComponentScan
+@ComponentScan(basePackageClasses={AppWideExceptionHandler.class,WebConfig.class})
 public class WebConfig extends WebMvcConfigurerAdapter{
 	
 	/**
